@@ -170,122 +170,46 @@
       </div>
       <div class="main-slider-pagination text-center mt-3"></div>
     </section>
-    <section id="products" class="product-store position-relative padding-xlarge pb-0">
+    
+    <section id="products" class="product-store padding-xlarge pt-0 position-relative">
       <div class="container display-header d-flex flex-wrap justify-content-between pb-4">
-        <h3 class="mt-3">Best selling Items</h3>
+        <h3 class="mt-3">Recommended</h3>
         <div class="btn-right d-flex flex-wrap align-items-center">
           <a href="shop.html" class="btn me-5">View all items →</a>
-          <div class="swiper-buttons">
-            <button class="swiper-prev product-carousel-prev me-2">
-              <svg width="41" height="41"><use xlink:href="#angle-left"></use></svg>
-            </button>
-            <button class="swiper-next product-carousel-next">
-              <svg width="41" height="41"><use xlink:href="#angle-right"></use></svg>
-            </button>
-          </div>
+            <div class="swiper-buttons">
+                <button class="swiper-prev product-carousel-prev2 me-2">
+                    <svg width="41" height="41"><use xlink:href="#angle-left"></use></svg>
+                </button>
+                <button class="swiper-next product-carousel-next2">
+                    <svg width="41" height="41"><use xlink:href="#angle-right"></use></svg>
+                </button>
+            </div>
         </div>
       </div>
-      <div class="swiper product-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item1.jpg" alt="product-item" class="img-fluid">
+      <div class="swiper product-swiper2">
+          <div class="swiper-wrapper">
+              @foreach($data as $book)
+              <div class="swiper-slide">
+                  <div class="product-card">
+                      <div class="image-holder">
+                          <img src="{{ $book['cover'] }}" alt="{{ $book['title'] }}" class="img-fluid">
+                      </div>
+                      <div class="card-detail text-center pt-3 pb-2">
+                          <h5 class="card-title fs-4 text-uppercase m-0">
+                              <a href="{{ $book['url'] }}">{{ $book['title'] }}</a>
+                          </h5>
+                          <span class="item-price text-primary fs-4">Rating: {{ $book['rating'] }}⭐</span> 
+                      </div>
+                  </div>
               </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="{{route('details')}}">Whispersong</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
+              @endforeach
           </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item2.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="{{route('details')}}">Starlight Secrets</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item3.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="{{route('details')}}">Shadow Dance</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item5.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="{{route('details')}}">Enchanted Sands</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item2.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="{{route('details')}}">Misty Meadows</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item3.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="{{route('details')}}">Twilight Tales</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
+
+
+
+
     <section id="testimonials" class="position-relative padding-xlarge">
       <div class="container">
         <div class="row">
@@ -334,6 +258,7 @@
         </div>
       </div>
     </section>
+    
     <section id="products" class="product-store padding-xlarge pt-0 position-relative">
       <div class="container display-header d-flex flex-wrap justify-content-between pb-4">
         <h3 class="mt-3">Recommended</h3>
