@@ -12,3 +12,4 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/details', [HomeController::class, 'details'])->name('details');
 Route::get('/fetch-data', [ApiController::class, 'fetchData']);
+Route::get('/all_items', [HomeController::class, 'all_items'])->name('all_items');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   
-<!-- Mirrored from demo.templatesjungle.com/micas/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Apr 2024 09:47:56 GMT -->
+<!-- Mirrored from demo.templatesjungle.com/micas/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Apr 2024 09:48:07 GMT -->
 <head>
     <title>Micas Bookstore Template</title>
     <meta charset="utf-8">
@@ -28,6 +28,9 @@
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M19 3C13.488 3 9 7.488 9 13c0 2.395.84 4.59 2.25 6.313L3.281 27.28l1.439 1.44l7.968-7.969A9.922 9.922 0 0 0 19 23c5.512 0 10-4.488 10-10S24.512 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8s-8-3.57-8-8s3.57-8 8-8z" />
+      </symbol>
       <symbol xmlns="http://www.w3.org/2000/svg" id="angle-right" viewBox="0 0 32 32">
         <path fill="currentColor" d="M12.969 4.281L11.53 5.72L21.812 16l-10.28 10.281l1.437 1.438l11-11l.687-.719l-.687-.719z"/>
       </symbol>
@@ -77,7 +80,7 @@
         <path fill="currentColor" d="M8 4.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V9a.5.5 0 0 1-1 0V7.5H6a.5.5 0 0 1 0-1h1.5V5a.5.5 0 0 1 .5-.5z" />
       </symbol>
     </svg>
-
+    
     <header id="header" class="site-header bg-white">
       <nav id="header-nav" class="navbar navbar-expand-lg px-3">
         <div class="container">
@@ -115,298 +118,296 @@
         </div>
       </nav>
     </header>
-    <section id="billboard" class="bg-gray padding-large">
-      <div class="swiper main-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="container">
-              <div class="row">
-                <div class="offset-md-1 col-md-5">
-                  <img src="images/book1.png" alt="product-img" class="img-fluid mb-3">
-                </div>
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="banner-content">
-                    <h2>Once upon a time</h2>
-                    <p class="fs-3">This book is specially designed by concept of traditional designs.</p>
-                    <a href="single-product.html" class="btn">Shop now →</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="container">
-              <div class="row">
-                <div class="offset-md-1 col-md-5">
-                  <img src="images/book2.png" alt="product-img" class="img-fluid mb-3">
-                </div>
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="banner-content">
-                    <h2>Felt from outside</h2>
-                    <p class="fs-3">This book is specially designed by concept of traditional designs.</p>
-                    <a href="single-product.html" class="btn">Shop now →</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="container">
-              <div class="row">
-                <div class="offset-md-1 col-md-5">
-                  <img src="images/book3.png" alt="product-img" class="img-fluid mb-3">
-                </div>
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="banner-content">
-                    <h2>Musical by Karim</h2>
-                    <p class="fs-3">This book is specially designed by concept of traditional designs.</p>
-                    <a href="single-product.html" class="btn">Shop now →</a>
-                  </div>
-                </div>
+    <section class="hero-section bg-gray d-flex align-items-center justify-content-center padding-medium pb-5">
+      <div class="hero-content">
+        <div class="container">
+          <div class="row">
+            <div class="text-center padding-medium no-padding-bottom">
+              <h1>Shop</h1>
+              <div class="breadcrumbs">
+                <span class="item">
+                  <a href="index-2.html">Home ></a>
+                </span>
+                <span class="item">Shop</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="main-slider-pagination text-center mt-3"></div>
     </section>
-    
-    <section id="products" class="product-store padding-xlarge pt-0 position-relative">
-      <div class="container display-header d-flex flex-wrap justify-content-between pb-4">
-        <h3 class="mt-3">Recommended</h3>
-        <div class="btn-right d-flex flex-wrap align-items-center">
-          <a href="{{route('all_items')}}" class="btn me-5">View all items →</a>
-            <div class="swiper-buttons">
-                <button class="swiper-prev product-carousel-prev2 me-2">
-                    <svg width="41" height="41"><use xlink:href="#angle-left"></use></svg>
-                </button>
-                <button class="swiper-next product-carousel-next2">
-                    <svg width="41" height="41"><use xlink:href="#angle-right"></use></svg>
-                </button>
-            </div>
-        </div>
-      </div>
-      <div class="swiper product-swiper2">
-          <div class="swiper-wrapper">
-              @foreach($data as $book)
-              <div class="swiper-slide">
-                  <div class="product-card">
-                      <div class="image-holder">
-                          <img src="{{ $book['cover'] }}" alt="{{ $book['title'] }}" class="img-fluid">
-                      </div>
-                      <div class="card-detail text-center pt-3 pb-2">
-                          <h5 class="card-title fs-4 text-uppercase m-0">
-                              <a href="{{ $book['url'] }}">{{ $book['title'] }}</a>
-                          </h5>
-                          <span class="item-price text-primary fs-4">Rating: {{ $book['rating'] }}⭐</span> 
-                      </div>
-                  </div>
-              </div>
-              @endforeach
-          </div>
-      </div>
-    </section>
-
-
-
-
-    <section id="testimonials" class="position-relative padding-xlarge">
+    <div class="shopify-grid padding-large">
       <div class="container">
         <div class="row">
-          <div class="offset-md-2 col-md-8">
-            <h3 class="text-center mb-5">What our customers says</h3>
-            <div class="review-content position-relative">
-              <div class="swiper testimonial-swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide text-center d-flex justify-content-center">
-                    <div class="review-item">
-                      <blockquote class="fs-1 fw-light">“A pellen tesque pretium feugiat vel morbi sagittis lorem habi tasse cursus. Suspen dise tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis.”</blockquote>
-                      <div class="author-detail">
-                        <div class="name fw-bold text-uppercase pt-2">Anna garcia</div>
-                      </div>
+          <main class="col-md-9">
+            <div class="filter-shop d-flex flex-wrap justify-content-between">
+              <div class="showing-product">
+                <p>Showing 1-9 of 55 results</p>
+              </div>
+              <div class="sort-by">
+                <select id="input-sort" class="form-control" data-filter-sort="" data-filter-order="">
+                  <option value="">Default sorting</option>
+                  <option value="">Name (A - Z)</option>
+                  <option value="">Name (Z - A)</option>
+                  <option value="">Price (Low-High)</option>
+                  <option value="">Price (High-Low)</option>
+                  <option value="">Rating (Highest)</option>
+                  <option value="">Rating (Lowest)</option>
+                  <option value="">Model (A - Z)</option>
+                  <option value="">Model (Z - A)</option>   
+                </select>
+              </div>
+            </div>
+            <div class="row product-content product-store">
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item1.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Whispersong</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
                     </div>
                   </div>
-                  <div class="swiper-slide text-center d-flex justify-content-center">
-                    <div class="review-item">
-                      <blockquote class="fs-1 fw-light">“A pellen tesque pretium feugiat vel morbi sagittis lorem habi tasse cursus. Suspen dise tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis.”</blockquote>
-                      <div class="author-detail">
-                        <div class="name fw-bold text-uppercase pt-2">Anna garcia</div>
-                      </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item2.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Starlight Secrets</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
                     </div>
                   </div>
-                  <div class="swiper-slide text-center d-flex justify-content-center">
-                    <div class="review-item">
-                      <blockquote class="fs-1 fw-light">“A pellen tesque pretium feugiat vel morbi sagittis lorem habi tasse cursus. Suspen dise tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis.”</blockquote>
-                      <div class="author-detail">
-                        <div class="name fw-bold text-uppercase pt-2">Anna garcia</div>
-                      </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item3.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Shadow Dance</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item4.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Crimson Destiny</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item5.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Enchanted Sands</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item6.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Aetherial Alchemy</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item7.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">The Lost Labyrinth</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item8.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Crystal Caverns</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="product-card mb-4">
+                  <div class="image-holder">
+                    <img src="images/product-item9.jpg" alt="product-item" class="img-fluid">
+                  </div>
+                  <div class="card-detail text-center pt-3 pb-2">
+                    <h5 class="card-title fs-4 text-uppercase m-0">
+                      <a href="single-product.html">Scarlet Secrets</a>
+                    </h5>
+                    <span class="item-price text-primary fs-4">$870</span>
+                    <div class="cart-button mt-1">
+                      <a href="#" class="btn">Add to cart</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-buttons text-center mt-5">
-              <button class="swiper-prev testimonial-arrow-prev me-2">
-                <svg width="41" height="41"><use xlink:href="#arrow-left"></use></svg>
-              </button>
-              <span>|</span>
-              <button class="swiper-next testimonial-arrow-next ms-2">
-                <svg width="41" height="41"><use xlink:href="#arrow-right"></use></svg>
-              </button>
+            <nav class="navigation paging-navigation text-center padding-medium" role="navigation">
+              <div class="pagination loop-pagination d-flex justify-content-center align-items-center">
+                <a href="#" class="d-flex pe-2">
+                  <svg width="24" height="24"><use xlink:href="#angle-left"></use></svg>
+                </a>
+                <span aria-current="page" class="page-numbers current pe-3">1</span>
+                <a class="page-numbers pe-3" href="#">2</a>
+                <a class="page-numbers pe-3" href="#">3</a>
+                <a class="page-numbers pe-3" href="#">4</a>
+                <a class="page-numbers" href="#">5</a>
+                <a href="#" class="d-flex ps-2">
+                  <svg width="24" height="24"><use xlink:href="#angle-right"></use></svg>
+                </a>
+              </div>
+            </nav>
+          </main>
+          <aside class="col-md-3">
+            <div class="sidebar">
+              <div class="widget-menu">
+                <div class="widget-search-bar">
+                  <form role="search" method="get" class="position-relative d-flex justify-content-between align-items-center border-bottom border-dark py-1">
+                    <input class="search-field" placeholder="Search" type="search">
+                    <div class="search-icon position-absolute end-0">
+                      <a href="#">
+                        <svg width="26" height="26" class="search">
+                          <use xlink:href="#search"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </form>
+                </div> 
+              </div>
+              {{-- <div class="widget-product-categories pt-5">
+                <h5 class="widget-title text-uppercase">Categories</h5>
+                <ul class="product-categories sidebar-list list-unstyled">
+                  <li class="cat-item">
+                    <a href="#">All</a>
+                  </li>
+                  <li class="cat-item">
+                    <a href="#">Spiritual</a>
+                  </li>
+                  <li class="cat-item">
+                    <a href="#">Money</a>
+                  </li>
+                  <li class="cat-item">
+                    <a href="#">Life</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="widget-product-tags pt-3">
+                <h5 class="widget-title text-uppercase">Tags</h5>
+                <ul class="product-tags sidebar-list list-unstyled">
+                  <li class="tags-item">
+                    <a href="#">Finance</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">Cheap</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">Story</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">Biography</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="widget-product-brands pt-3">
+                <h5 class="widget-title text-uppercase">Latest Products</h5>
+                <ul class="product-tags sidebar-list list-unstyled">
+                  <li class="tags-item">
+                    <a href="#">Dance of Fireflies</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">Starry Horizons</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">Tales of Tranquility</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="widget-price-filter pt-3">
+                <h5 class="widget-title text-uppercase">Filter By Price</h5>
+                <ul class="product-tags sidebar-list list-unstyled">
+                  <li class="tags-item">
+                    <a href="#">Less than $100</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">$100 - $200</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">$200 - $300</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">$300 - $400</a>
+                  </li>
+                  <li class="tags-item">
+                    <a href="#">$400 - $500</a>
+                  </li>
+                </ul>
+              </div> --}}
             </div>
-          </div>
+          </aside>
         </div>
       </div>
-    </section>
-    
-    <section id="products" class="product-store padding-xlarge pt-0 position-relative">
-      <div class="container display-header d-flex flex-wrap justify-content-between pb-4">
-        <h3 class="mt-3">Recommended</h3>
-        <div class="btn-right d-flex flex-wrap align-items-center">
-          <a href="{{route('all_items')}}" class="btn me-5">View all items →</a>
-          <div class="swiper-buttons">
-            <button class="swiper-prev product-carousel-prev2 me-2">
-              <svg width="41" height="41"><use xlink:href="#angle-left"></use></svg>
-            </button>
-            <button class="swiper-next product-carousel-next2">
-              <svg width="41" height="41"><use xlink:href="#angle-right"></use></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="swiper product-swiper2">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item6.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">Aetherial Alchemy</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item7.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">The Lost Labyrinth</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item8.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">Crystal Caverns</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item9.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">Scarlet Secrets</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item10.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">Starry Horizons</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item2.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">Dance of Fireflies</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item4.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">Siren's Song</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="image-holder">
-                <img src="images/product-item3.jpg" alt="product-item" class="img-fluid">
-              </div>
-              <div class="card-detail text-center pt-3 pb-2">
-                <h5 class="card-title fs-4 text-uppercase m-0">
-                  <a href="single-product.html">Misty Mirage</a>
-                </h5>
-                <span class="item-price text-primary fs-4">$870</span>
-                <div class="cart-button mt-1">
-                  <a href="#" class="btn">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
     <footer id="footer" class="overflow-hidden padding-xlarge pb-0">
       <div class="container">
         <div class="row">
@@ -516,32 +517,14 @@
       </div>
     </div>
     
-    <!-- Video Popup -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
 
-          <div class="modal-content">
-            
-              <div class="modal-body">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg class="bi" width="40" height="40"><use xlink:href="#close-sharp"></use></svg></button>
-                  <div class="ratio ratio-16x9">
-                    <iframe class="embed-responsive-item" src="#" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                  </div>
-              </div>
-
-          </div>
-
-      </div>
-    </div>
-<script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
-
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-
-<script src="{{ asset('js/plugins.js') }}"></script>
-
-<script src="{{ asset('js/script.js') }}"></script>
-
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    
+    <script src="{{ asset('js/script.js') }}"></script>
   </body>
 
-<!-- Mirrored from demo.templatesjungle.com/micas/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Apr 2024 09:48:06 GMT -->
+<!-- Mirrored from demo.templatesjungle.com/micas/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Apr 2024 09:48:07 GMT -->
 </html>

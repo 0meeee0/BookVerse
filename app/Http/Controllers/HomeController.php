@@ -14,4 +14,8 @@ class HomeController extends Controller
     {
         return view('index');
     }
+    public function all_items()
+    {
+        return view('all_items');
+    }
 }
